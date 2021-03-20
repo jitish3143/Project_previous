@@ -12,7 +12,7 @@ export PYTHONPATH=$PYTHONPATH:segmentation
 # convert -resize 50% style3.png style3.png;
 # cd ..;
 
-for a in `seq 41 104`
+for a in `seq 1 104`
 do 
 	echo $a;
 
@@ -21,7 +21,7 @@ do
   # convert -resize 80% train_new/im$a.png train_new/im$a.png;
   # convert -resize 80% train_new/tar$a.png train_new/tar$a.png;
   # #--no_post
-	python demo_with_ade20k_ssn.py   --content_image_path train_new/im$a.png --style_image_path train_new/tar$a.png --content_seg_path results/content-$a-seg.pgm --style_seg_path results/style-$a-seg.pgm --output_image_path results/out$a.png
+	python demo_with_ade20k_ssn.py   --content_image_path train_new/im$a.png --style_image_path train_new1/tar$a.png --content_seg_path post_results_unet_input/content-$a-seg.pgm --style_seg_path post_results_unet_input/style-$a-seg.pgm --output_image_path post_results_unet_input/out$a.png
 done
 
 # --no_post 
